@@ -1,0 +1,2 @@
+#!/bin/sh
+xprop -id $1 -format _NET_WM_STRUT_PARTIAL 32c -set _NET_WM_STRUT_PARTIAL "0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, $2"
