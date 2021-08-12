@@ -1,0 +1,28 @@
+{
+  "name": "lynx-dock",
+  "id": "ar.net.lynx.os.dock",
+  "version": "0.0.1",
+  "description": "Dock for Lynx OS",
+  "domain": "lynxos",
+  "chromium-args": "--disable-accelerated-video --force-cpu-draw",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "window": {
+    "id": "ar.net.lynx.os.dock",
+    "show": true,
+    "transparent": true,
+    "title": "Lynx Dock",
+    "icon": "icon.svg",
+    "frame": false,
+    "show_in_taskbar": false
+  },
+  "category": "System & Tools",
+  "author": "Lynx Software Design",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "node-ipc": "^9.2.1"
+  }
+}
