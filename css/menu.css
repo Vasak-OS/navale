@@ -1,0 +1,59 @@
+#menu{
+  background: var(--system-background);
+  border-radius: var(--system-border);
+  bottom: 0;
+  height: 550px;
+  margin-top: 70px;
+}
+
+#menu-content{
+  height: 390px;
+  overflow-y: scroll;
+}
+
+#menu-category{
+  margin-top: 5px;;
+}
+
+.category-img{
+  max-height: 24px;
+}
+
+.lynx-profile-picture{
+  border-radius: var(--system-border);
+  max-width: 110px;
+  max-height: 110px;
+}
+
+#user-info{
+  margin-top: -65px;
+}
+
+.form-control{
+  background: var(--system-background);
+  color: var(--system-font-color);
+  margin-top: 10px;
+  border: 1px solid var(--system-color);
+  border-radius: var(--system-border);
+}
+
+.input-group-text{
+  background: var(--system-color);
+  color: var(--system-background);
+  margin-top: 10px;
+  border: 1px solid var(--system-color);
+  border-radius: var(--system-border);
+}
+
+.name-app{
+  color: var(--system-font-color);
+  font-size: 12px;
+}
+
+.btn-app, .nav-fill .nav-item .nav-link, .nav-justified .nav-item .nav-link{
+  border-radius: var(--system-border);
+}
+
+.btn-app:hover{
+  background: var(--system-color);
+}

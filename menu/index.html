@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>lynx-menu</title>
+
+    <link href="file:///home/pato/LynxOS/lynx-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="file:///home/pato/LynxOS/lynx-base-css/variables.css" />
+    <link rel="stylesheet" href="/css/menu.css" />
+  </head>
+  <body>
+    <div id="menu" class="container-fluid">
+      <div class="row">
+
+        <!-- Informacion del usuario -->
+        <div id="user-info" class="col-12 text-center">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-4">
+
+              </div>
+              <div class="col-4" id="imgDiv">
+                <img
+                  src=""
+                  class="img-fluid user-img"
+                  id="user-img"
+                  alt="user" />
+              </div>
+              <div class="col-4">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search section -->
+        <div class="col-12" id="searc-div">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search"
+              aria-label="Search"
+              id="search"
+              aria-describedby="icon-search" />
+            <span class="input-group-text" id="icon-search">@</span>
+          </div>
+        </div>
+
+        <!-- Menu section -->
+        <div class="col-12">
+          <div class="tab-content" id="menu-content">
+          </div>
+          <ul class="nav nav-pills nav-justified" id="menu-category" role="tablist"></ul>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="file:///home/pato/LynxOS/lynx-bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/global.js"></script>
+    <script src="/js/menu.js"></script>
+		<script src="/js/shorcutMenu.js"></script>
+  </body>
+</html>
