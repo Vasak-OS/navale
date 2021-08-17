@@ -21,5 +21,3 @@ document.getElementById("dockMenuLauncher").innerHTML = `
   class="img-fluid dock-menu-launcher-icon"
   alt="Menu" />
 `;
-
-whritewindowsOpens()
