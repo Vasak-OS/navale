@@ -19,7 +19,6 @@ function openMenu(){
       "width": 700,
       "height": 620
     })
-  whritewindowsOpens();
 }
 
 function setIMG(){
@@ -30,11 +29,8 @@ function setIMG(){
       class="img-fluid lynx-profile-picture" />`
 }
 
-function whritewindowsOpens(){
-  windowsOpen = JSON.parse(execSynx('python', ["scripts/getWindowsOpen.py"])
-  .stdout
-  .toString()
-  .replaceAll('\'', ''));
+function writewindowsOpens(winopens){
+  windowsOpen = JSON.parse(winopens.replaceAll('\'', ''));
 
   elem = document.getElementById('windowsOpenSection');
 
