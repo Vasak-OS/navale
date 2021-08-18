@@ -2,12 +2,12 @@
   background: var(--system-background);
   border-radius: var(--system-border);
   bottom: 0;
-  height: 550px;
-  margin-top: 70px;
+  height: 560px;
+  margin-top: 60px;
 }
 
 #menu-content{
-  height: 390px;
+  height: 400px;
   overflow-y: scroll;
 }
 
@@ -21,8 +21,8 @@
 
 .lynx-profile-picture{
   border-radius: var(--system-border);
-  max-width: 110px;
-  max-height: 110px;
+  max-width: 100px;
+  max-height: 100px;
 }
 
 #user-info{
