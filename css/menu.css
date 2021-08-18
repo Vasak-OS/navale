@@ -57,3 +57,7 @@
 .btn-app:hover{
   background: var(--system-color);
 }
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+  background: var(--system-color);
+}
