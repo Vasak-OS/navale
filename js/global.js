@@ -1,6 +1,8 @@
 const homePath = nw.App.dataPath.concat('/../../../');
 const execSynx = require('child_process').spawnSync;
 const exec = require('child_process').spawn;
+const dbus = require('dbus-native');
+const sessionBus = dbus.sessionBus();
 
 function openMenu(){
   nw.Window.open("/menu/index.html",
@@ -38,8 +40,8 @@ function writewindowsOpens(winopens){
 
   for (openwin in windowsOpen){
     html = html.concat(`
-      <button class="btn win-button">
-        <img src="file://${windowsOpen[openwin].icon}" alt="${windowsOpen[openwin].icon}" class="img-fluid win-img" />
+      <button onclick="toggleWin(${windowsOpen[openwin].id})" class="btn win-button">
+        <img src="file://${windowsOpen[openwin].icon}" alt="${windowsOpen[openwin].name}" class="img-fluid win-img" />
       </button>
     `)
   }
