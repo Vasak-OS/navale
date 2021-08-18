@@ -1,28 +1,26 @@
-const dbus = require('dbus-native');
-const serviceName = 'ar.net.lynx.os.dock';
-const interfaceName = serviceName;
-const objectPath = `/${serviceName.replace(/\./g, '/')}`;
-const sessionBus = dbus.sessionBus();
+const dockServiceName = 'ar.net.lynx.os.dock';
+const dockInterfaceName = dockServiceName;
+const dockObjectPath = `/${dockServiceName.replace(/\./g, '/')}`;
 
 if (!sessionBus) {
   console.log('Could not connect to the DBus session bus.');
 }
 
-sessionBus.requestName(serviceName, 0x4, (err, retCode) => {
+sessionBus.requestName(dockServiceName, 0x4, (err, retCode) => {
   if (err) {
     console.log(
-      `Could not request service name ${serviceName}, the error was: ${err}.`
+      `Could not request service name ${dockServiceName}, the error was: ${err}.`
     );
   }
 
   // Return code 0x1 means we successfully had the name
   if (retCode === 1) {
-    console.log(`Successfully requested service name "${serviceName}"!`);
+    console.log(`Successfully requested service name "${dockServiceName}"!`);
     proceed();
   } else {
     console.log(
       `Failed to request service name "${
-        serviceName
+        dockServiceName
       }". Check what return code "${retCode}" means.`
     );
   }
@@ -31,7 +29,7 @@ sessionBus.requestName(serviceName, 0x4, (err, retCode) => {
 function proceed() {
   // First, we need to create our interface description (here we will only expose method calls)
   var ifaceDesc = {
-    name: interfaceName,
+    name: dockInterfaceName,
     methods: {
       UpdateWindowsDock: ['s', '', ['Lista de Ventanas'], []],
       GiveTime: ['', 's', [], ['current_time']],
@@ -64,7 +62,7 @@ function proceed() {
     }
   };
 
-  sessionBus.exportInterface(iface, objectPath, ifaceDesc);
+  sessionBus.exportInterface(iface, dockObjectPath, ifaceDesc);
   console.log('Interface exposed to DBus, ready to receive function calls!');
 
 }
