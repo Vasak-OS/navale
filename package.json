@@ -23,7 +23,6 @@
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "child_process": "^1.0.2",
-    "dbus-native": "^0.4.0",
-    "node-ipc": "^9.2.1"
+    "dbus-native": "^0.4.0"
   }
 }
