@@ -3,7 +3,7 @@ const desktopInterfaceName = desktopServiceName;
 const desktopObjectPath = `/${desktopServiceName.replace(/\./g, '/')}`;
 
 function toggleWin(win){
-  desktopServicePrev = sessionBus.getService(desktopServiceName)
+  const desktopServicePrev = sessionBus.getService(desktopServiceName)
 
   desktopServicePrev.getInterface(desktopObjectPath, desktopInterfaceName, (err, iface) => {
     if (err) {
