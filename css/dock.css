@@ -16,13 +16,19 @@
 }
 
 .win-img{
-  height: 28px;
+  height: 26px;
   margin-top: 1px;
   margin-bottom: 1px;
+  -webkit-transition:all .5s ease;
+  transition: all .5s ease;
 }
 
 .win-button{
   border: 0px solid transparent;
   padding: 0px;
   border-radius: var(--system-border);
+}
+
+.win-img:hover{
+  transform:scale(1.25);
 }
