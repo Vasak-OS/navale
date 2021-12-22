@@ -12,8 +12,11 @@ var idApp = execSynx('python', ["scripts/setDock.py"])
 
 exec('scripts/fixxprop',[idApp, Math.round(screen.width)])
 
-exec('python', ["scripts/setDock.py"]);
-iconMenu = execSynx('python', ["scripts/getIcon.py", "app-launcher"]).stdout.toString()
+exec('python', ["/usr/share/Lynx/lynx-dock/scripts/setDock.py"]);
+
+iconMenu = execSynx('python', ["/usr/share/Lynx/lynx-dock/scripts/getIcon.py", "app-launcher"]).stdout.toString()
+
+console.trace(`Scripts - getIcon [Trace] - ${iconMenu}`);
 
 document.getElementById("dockMenuLauncher").innerHTML = `
 <img

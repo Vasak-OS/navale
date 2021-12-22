@@ -5,15 +5,17 @@ winMenu.setAlwaysOnTop(true);
 winMenu.setShowInTaskbar(false);
 winMenu.setResizable(false);
 
-exec('python', ["scripts/setMenu.py"]);
+exec('python', ["/usr/share/Lynx/lynx-dock/scripts/setMenu.py"]);
 
 // Add Windows Data
 setIMG();
-var menuApps = JSON.parse(execSynx('python', ["scripts/getMenu.py"])
+var menuApps = JSON.parse(execSynx('python', ["/usr/share/Lynx/lynx-dock/scripts/getMenu.py"])
   .stdout
   .toString()
   .replaceAll('\'s', 's') // fix to comments user 's 
   .replaceAll('\'', '\"'));
+
+console.trace(`Scripts - getMenu [Trace] - ${menuApps}`);
 
 winMenu.focus();
 
@@ -25,7 +27,7 @@ retCategories();
 initMenu();
 
 function openApp(appPath){
-  exec('scripts/runapp', [appPath]);
+  exec('/usr/share/Lynx/lynx-dock/scripts/runapp', [appPath]);
   winMenu.close();
 }
 
