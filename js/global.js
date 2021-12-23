@@ -6,30 +6,7 @@ const sessionBus = dbus.sessionBus();
 const process = require('process');
 
 function openMenu(){
-  nw.Window.open("/menu/index.html",
-    {
-      "id": "ar.net.lynx.os.menu",
-      "new_instance": true,
-      "focus": true,
-      "title": "Lynx Menu",
-      "show": true,
-      "transparent": true,
-      "icon": "icon.svg",
-      "resizable": false,
-      "frame": false,
-      "position": "center",
-      "show_in_taskbar": false,
-      "width": 700,
-      "height": 620
-    })
-}
-
-function setIMG(){
-  elem = document.getElementById('imgDiv');
-  elem.innerHTML = `
-    <img
-      src="file://${homePath}.face"
-      class="img-fluid lynx-profile-picture" />`
+  exec('lynx-menu')
 }
 
 function writewindowsOpens(winopens){
