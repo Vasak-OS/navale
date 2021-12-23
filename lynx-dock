@@ -1,1 +1,2 @@
-lynx-nw /usr/share/Lynx/lynx-dock/ --disable-gpu-compositing --force-cpu-draw
+#!/bin/bash
+lynx-nw /usr/share/Lynx/lynx-dock/
