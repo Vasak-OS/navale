@@ -3,6 +3,7 @@ const execSynx = require('child_process').spawnSync;
 const exec = require('child_process').spawn;
 const dbus = require('dbus-native');
 const sessionBus = dbus.sessionBus();
+const process = require('process');
 
 function openMenu(){
   nw.Window.open("/menu/index.html",

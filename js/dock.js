@@ -6,13 +6,13 @@ win.moveBy(0,0);
 win.resizeTo(Math.round(screen.width), 34);
 win.setResizable(false);
 
-var idApp = execSynx('python', ["scripts/setDock.py"])
+var idApp = execSynx('python', ["/usr/share/Lynx/lynx-dock/scripts/setDock.py", `${process.pid.toString()}`])
   .stdout
   .toString();
 
-exec('scripts/fixxprop',[idApp, Math.round(screen.width)])
+console.log(idApp);
 
-exec('python', ["/usr/share/Lynx/lynx-dock/scripts/setDock.py"]);
+exec('scripts/fixxprop',[idApp, Math.round(screen.width)])
 
 iconMenu = execSynx('python', ["/usr/share/Lynx/lynx-dock/scripts/getIcon.py", "app-launcher"]).stdout.toString()
 
