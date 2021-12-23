@@ -2,8 +2,8 @@ const win = nw.Window.get();
 
 // Set windows Properties
 win.setShowInTaskbar(false);
-win.moveBy(0,0);
 win.resizeTo(Math.round(screen.width), 34);
+win.moveBy(0,64);
 win.setResizable(false);
 
 var idApp = execSynx('python', ["/usr/share/Lynx/lynx-dock/scripts/setDock.py", `${process.pid.toString()}`])
