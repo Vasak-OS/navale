@@ -1,8 +1,9 @@
 .navbar{
-  margin: 0px;
-  max-height: 34px;
+  margin: 0px 10px;
+  max-height: 32px;
+  margin-top: 2px;
   background: var(--system-background);
-  border-radius: 0px 0px var(--system-border) var(--system-border);
+  border-radius: var(--system-border);
 }
 
 .navbar-brand{
