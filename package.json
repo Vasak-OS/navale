@@ -1,6 +1,5 @@
 {
   "name": "lynx-dock",
-  "id": "ar.net.lynx.os.dock",
   "version": "0.0.1",
   "description": "Dock for Lynx OS",
   "domain": "lynxos",
@@ -17,6 +16,7 @@
     "title": "Lynx Dock",
     "icon": "icon.svg",
     "frame": false,
+    "height": 32,
     "show_in_taskbar": false
   },
   "category": "System & Tools",
