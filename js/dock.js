@@ -7,15 +7,13 @@ win.setResizable(false);
 win.y = 0;
 win.x = 0;
 
-var idApp = execSynx('python', ["/usr/share/Lynx/lynx-dock/scripts/setDock.py", `${process.pid.toString()}`, Math.round(screen.width)])
+var idApp = execSynx('python', ["/usr/share/Lynx/lynx-desktop-service/Setters/setDock.py", `${process.pid.toString()}`, Math.round(screen.width)])
   .stdout
   .toString();
 
 console.log(idApp);
 
-//exec('/usr/share/Lynx/lynx-dock/scripts/fixxprop',[idApp, Math.round(screen.width)])
-
-iconMenu = execSynx('python', ["/usr/share/Lynx/lynx-dock/scripts/getIcon.py", "app-launcher"]).stdout.toString()
+iconMenu = execSynx('python', ["/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py", "app-launcher"]).stdout.toString()
 
 console.trace(`Scripts - getIcon [Trace] - ${iconMenu}`);
 
