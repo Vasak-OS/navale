@@ -22,6 +22,7 @@ for win in temp_windows:
     topw.change_property(display.intern_atom('_NET_WM_STRUT'),
                        display.intern_atom('CARDINAL'), 32,
                        [0, 0, 34, 0 ],
+                       ## [0, 0, 0, 34 ], Para Bottom
                        X.PropModeReplace)
     topw.change_property(display.intern_atom('_NET_WM_STRUT_PARTIAL'),
                        display.intern_atom('CARDINAL'), 32,
