@@ -2,7 +2,7 @@ const win = nw.Window.get();
 
 // Set windows Properties
 win.setShowInTaskbar(false);
-win.resizeTo(Math.round(screen.width), 34);
+win.resizeTo(Math.round(screen.width), 36);
 win.setResizable(false);
 win.y = 0;
 win.x = 0;
