@@ -11,11 +11,7 @@ var idApp = execSynx('python', ["/usr/share/Lynx/lynx-desktop-service/Setters/se
   .stdout
   .toString();
 
-console.log(idApp);
-
 iconMenu = execSynx('python', ["/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py", "app-launcher"]).stdout.toString()
-
-console.trace(`Scripts - getIcon [Trace] - ${iconMenu}`);
 
 document.getElementById("dockMenuLauncher").innerHTML = `
 <img
