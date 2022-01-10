@@ -5,11 +5,11 @@ const dbus = require('dbus-native');
 const sessionBus = dbus.sessionBus();
 const process = require('process');
 
-function openMenu(){
+async function openMenu(){
   exec('lynx-menu')
 }
 
-function writewindowsOpens(winopens){
+async function writewindowsOpens(winopens){
   windowsOpen = JSON.parse(winopens.replaceAll('\'', ''));
 
   elem = document.getElementById('windowsOpenSection');

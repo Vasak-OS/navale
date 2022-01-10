@@ -7,15 +7,17 @@ win.setResizable(false);
 win.y = 0;
 win.x = 0;
 
-var idApp = execSynx('python', ["/usr/share/Lynx/lynx-desktop-service/Setters/setDock.py", `${process.pid.toString()}`, Math.round(screen.width)])
-  .stdout
-  .toString();
+exec('python', ["/usr/share/Lynx/lynx-desktop-service/Setters/setDock.py", `${process.pid.toString()}`, Math.round(screen.width)]);
 
-iconMenu = execSynx('python', ["/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py", "app-launcher"]).stdout.toString()
+setMenuButton("app-launcher");
 
-document.getElementById("dockMenuLauncher").innerHTML = `
-<img
-  src="file://${iconMenu}"
-  class="img-fluid dock-menu-launcher-icon"
-  alt="Menu" />
-`;
+async function setMenuButton(buttonicon = "app-launcher") {
+  iconMenu = execSynx('python', ["/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py", buttonicon]).stdout.toString()
+
+  document.getElementById("dockMenuLauncher").innerHTML = `
+  <img
+    src="file://${iconMenu}"
+    class="img-fluid dock-menu-launcher-icon"
+    alt="Menu" />
+  `;
+}

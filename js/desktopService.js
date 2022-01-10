@@ -2,7 +2,7 @@ const desktopServiceName = 'ar.net.lynx.os.desktop.service';
 const desktopInterfaceName = desktopServiceName;
 const desktopObjectPath = `/${desktopServiceName.replace(/\./g, '/')}`;
 
-function toggleWin(win){
+async function toggleWin(win){
   const desktopServicePrev = sessionBus.getService(desktopServiceName)
 
   desktopServicePrev.getInterface(desktopObjectPath, desktopInterfaceName, (err, iface) => {

@@ -8,17 +8,16 @@ if (!sessionBus) {
 
 sessionBus.requestName(dockServiceName, 0x4, (err, retCode) => {
   if (err) {
-    console.log(
+    console.error(
       `Could not request service name ${dockServiceName}, the error was: ${err}.`
     );
   }
 
   // Return code 0x1 means we successfully had the name
   if (retCode === 1) {
-    console.log(`Successfully requested service name "${dockServiceName}"!`);
     proceed();
   } else {
-    console.log(
+    console.error(
       `Failed to request service name "${
         dockServiceName
       }". Check what return code "${retCode}" means.`
@@ -26,7 +25,7 @@ sessionBus.requestName(dockServiceName, 0x4, (err, retCode) => {
   }
 });
 
-function proceed() {
+async function proceed() {
   // First, we need to create our interface description (here we will only expose method calls)
   var ifaceDesc = {
     name: dockInterfaceName,
@@ -63,6 +62,5 @@ function proceed() {
   };
 
   sessionBus.exportInterface(iface, dockObjectPath, ifaceDesc);
-  console.log('Interface exposed to DBus, ready to receive function calls!');
 
 }
