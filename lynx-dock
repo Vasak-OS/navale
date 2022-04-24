@@ -1,2 +1,2 @@
 #!/bin/bash
-nw /usr/share/Lynx/lynx-dock/ --enable-transparent-visuals --disable-gpu
+nw /usr/share/Lynx/lynx-dock/ --enable-transparent-visuals --disable-gpu &
