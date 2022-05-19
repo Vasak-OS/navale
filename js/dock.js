@@ -10,10 +10,10 @@ win.setAlwaysOnTop(true);
 
 exec('python', ['/usr/share/Lynx/lynx-desktop-service/Setters/setDock.py', `${process.pid.toString()}`, Math.round(screen.width)]);
 
-setMenuButton('app-launcher');
+setMenuButton();
 
-async function setMenuButton(buttonicon = 'app-launcher') {
-  iconMenu = execSynx('python', ['/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py', buttonicon]).stdout.toString()
+async function setMenuButton() {
+  iconMenu = execSynx('python', ['/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py', 'lynx-menu']).stdout.toString()
 
   document.getElementById('dockMenuLauncher').innerHTML = `
   <img
