@@ -39,3 +39,7 @@
 body{
   overflow: hidden;
 }
+
+#notificationArea div{
+  display: inline-block;
+}
