@@ -44,6 +44,10 @@ body{
   display: inline-block;
 }
 
+#notificationArea div img:hover{
+  animation: wiggle 2s linear infinite;
+}
+
 #clock{
   vertical-align: middle;
   font-size: 14px;
