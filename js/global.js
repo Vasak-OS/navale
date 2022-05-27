@@ -4,6 +4,7 @@ const exec = require('child_process').spawn;
 const dbus = require('dbus-native');
 const sessionBus = dbus.sessionBus();
 const process = require('process');
+const systeminformation = require('systeminformation');
 
 async function openMenu(){
   exec('lynx-menu')

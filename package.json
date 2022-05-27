@@ -24,6 +24,7 @@
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "child_process": "^1.0.2",
-    "dbus-native": "^0.4.0"
+    "dbus-native": "^0.4.0",
+    "systeminformation": "^5.11.15"
   }
 }
