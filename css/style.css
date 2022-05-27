@@ -43,3 +43,9 @@ body{
 #notificationArea div{
   display: inline-block;
 }
+
+#clock{
+  vertical-align: middle;
+  font-size: 14px;
+  padding: 2px 0;
+}
