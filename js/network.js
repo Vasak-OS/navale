@@ -2,7 +2,7 @@ async function startNetworkData(){
     let elem = document.getElementById("network");
     let device = await systeminformation.networkInterfaces('default');
     let icon = execSynx('python', ['/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py', 'network-disconnected-symbolic']).stdout.toString();
-
+    let data = device.ip4;
     
     if (device.type === 'wired'){
         if (device.operstate === 'down'){
@@ -16,6 +16,7 @@ async function startNetworkData(){
         }else{
             let wifi = await systeminformation.wifiConnections();
             let myWifi = wifi.find(conn => conn.iface === device.iface)
+            data = `${myWifi.ssid}\n${device.ip4}`;
 
             //elem.innerHTML = myWifi.signalLevel;
             if (myWifi.signalLevel >= -30){
@@ -33,6 +34,9 @@ async function startNetworkData(){
     }
 
     elem.innerHTML = `<img
+        data-bs-toggle="tooltip"
+        data-bs-placement="left"
+        title="${data}"
         src="file://${icon}"
         class="img-fluid dock-system-icon"
         alt="Menu" />
