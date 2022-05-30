@@ -13,11 +13,14 @@ exec('python', ['/usr/share/Lynx/lynx-desktop-service/Setters/setDock.py', `${pr
 setMenuButton();
 
 async function setMenuButton() {
-  iconMenu = execSynx('python', ['/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py', 'lynx-menu']).stdout.toString()
+  iconMenu = execSynx('python', ['/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py', 'lynx-menu']).stdout.toString();
 
   document.getElementById('dockMenuLauncher').innerHTML = `
   <img
     src="file://${iconMenu}"
+    data-bs-toggle="tooltip"
+    data-bs-placement="left"
+    title="Lynx Menu"
     class="img-fluid dock-menu-launcher-icon"
     alt="Menu" />
   `;
