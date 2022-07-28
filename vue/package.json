@@ -7,6 +7,9 @@
     "preview": "vite preview --port 4173"
   },
   "dependencies": {
+    "child_process": "^1.0.2",
+    "dbus-native": "^0.4.0",
+    "systeminformation": "^5.12.1",
     "vue": "^3.2.37"
   },
   "devDependencies": {
