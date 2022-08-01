@@ -1,38 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-		<title>lynx-dock</title>
 
-		<link href="file:///usr/share/Lynx/lynx-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="file:///usr/share/Lynx/lynx-base-css/variables.css" />
-		<link rel="stylesheet" href="file:///usr/share/Lynx/lynx-base-css/global.css" />
-		<link rel="stylesheet" href="file:///usr/share/Lynx/lynx-dock/css/style.css" />
-	</head>
-	<body>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<nav class="navbar navbar-expand-lg">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#" id="dockMenuLauncher" onclick="openMenu()"></a>
+	<title>lynx-dock</title>
 
-				<div class="ms-auto me-auto" id="windowsOpenSection"></div>
-				
-				<div id="notificationArea">
-					<div id="network"></div>
-					<div id="battery"></div>
-					<div id="clock"></div>
-				</div>
-			</div>
-		</nav>
+	<link href="file:///usr/share/Lynx/lynx-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="file:///usr/share/Lynx/lynx-base-css/variables.css" />
+	<link rel="stylesheet" href="file:///usr/share/Lynx/lynx-base-css/global.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+</head>
 
-		<script src="file:///usr/share/Lynx/lynx-bootstrap/js/bootstrap.min.js"></script>
-		<script src="file:///usr/share/Lynx/lynx-dock/js/global.js"></script>
-		<script src="file:///usr/share/Lynx/lynx-dock/js/desktopService.js"></script>
-		<script src="file:///usr/share/Lynx/lynx-dock/js/dock.js"></script>
-		<script src="file:///usr/share/Lynx/lynx-dock/js/clock.js"></script>
-		<script src="file:///usr/share/Lynx/lynx-dock/js/network.js"></script>
-		<script src="file:///usr/share/Lynx/lynx-dock/js/battery.js"></script>
-	</body>
+<body>
+
+	<nav id="app" class="navbar navbar-expand-lg"></nav>
+
+	<script type="importmap">
+		{
+		  "imports": {
+			"vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+		  }
+		}
+	</script>
+	<script src="file:///usr/share/Lynx/lynx-bootstrap/js/bootstrap.min.js"></script>
+	<script type="module" src="/js/App.js"></script>
+</body>
+
 </html>
