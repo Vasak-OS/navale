@@ -19,7 +19,7 @@ const app = createApp({
     <div class="container-fluid">
         <MenuButtom />
         <WindowsSections />
-        <NotificarionArea />
+        <NotificationArea />
     </div>`,
     components: {
         MenuButtom,
