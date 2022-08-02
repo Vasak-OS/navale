@@ -16,11 +16,20 @@
 <body>
 
 	<nav id="app" class="navbar navbar-expand-lg"></nav>
-
-	<script type="importmap">
+	
+	<!--Dev-->
+	<!--<script type="importmap">
 		{
 		  "imports": {
 			"vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+		  }
+		}
+	</script>-->
+	<!-- Prod -->
+	<script type="importmap">
+		{
+		  "imports": {
+			"vue": "file:///usr/share/Lynx/lynx-vue/vue.esm-browser.prod.js"
 		  }
 		}
 	</script>
