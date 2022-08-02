@@ -1,6 +1,8 @@
 import { createApp } from 'vue';
 import MenuButtom from './components/MenuButtom.js';
+import WindowsSections from './components/WindowsSections.js';
 
+/* Init APP VueJS */
 const app = createApp({
     async beforeMount() {
         // Set windows Properties
@@ -15,7 +17,7 @@ const app = createApp({
     template: `
     <div class="container-fluid">
         <MenuButtom />
-        <div class="ms-auto me-auto" id="windowsOpenSection"></div>
+        <WindowsSections />
 
         <div id="notificationArea">
             <div id="network"></div>
@@ -24,10 +26,12 @@ const app = createApp({
         </div>
     </div>`,
     components: {
-        MenuButtom
+        MenuButtom,
+        WindowsSections
     }
 });
 
+/* Add Services aditional to VueJS in Global Properties */
 app.config.globalProperties.$execSynx = require('child_process').spawnSync;
 app.config.globalProperties.$exec = require('child_process').spawn;
 app.config.globalProperties.$win = nw.Window.get();

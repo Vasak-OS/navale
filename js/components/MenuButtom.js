@@ -1,11 +1,11 @@
 export default {
-    methods:{
-        openMenu(){
+    methods: {
+        openMenu() {
             this.$exec('lynx-menu');
         }
     },
-    computed:{
-        icon(){
+    computed: {
+        icon() {
             return this.$execSynx('python', ['/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py', 'lynx-menu']).stdout.toString();
         }
     },
