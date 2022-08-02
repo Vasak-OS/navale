@@ -31,22 +31,21 @@ export default {
             windowsOpen
         }
     },
-    methods:{
-        async toggleWin(win){
+    methods: {
+        async toggleWin(win) {
             desktopServiceDBUS.getInterface(desktopObjectPath, desktopInterfaceName, (err, iface) => {
-              if (err) {
-                console.error(
-                  `Failed to request interface '${desktopInterfaceName}' at '${desktopObjectPath}' : ${
-                    err
-                  }`
-                    ? err
-                    : '(no error)'
-                );
-                process.exit(1);
-              }
-              iface.toggleWindow(win.toString());
+                if (err) {
+                    console.error(
+                        `Failed to request interface '${desktopInterfaceName}' at '${desktopObjectPath}' : ${err
+                            }`
+                            ? err
+                            : '(no error)'
+                    );
+                    process.exit(1);
+                }
+                iface.toggleWindow(win.toString());
             });
-          }
+        }
     },
     template: `
     <div class="ms-auto me-auto" id="windowsOpenSection">

@@ -8,7 +8,7 @@ export default {
         <Clock />
     </div>
     `,
-    components:{
+    components: {
         Clock
     }
 };
