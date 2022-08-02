@@ -31,6 +31,7 @@ const app = createApp({
 /* Add Services aditional to VueJS in Global Properties */
 app.config.globalProperties.$execSynx = require('child_process').spawnSync;
 app.config.globalProperties.$exec = require('child_process').spawn;
+app.config.globalProperties.$systeminformation = require('systeminformation');
 app.config.globalProperties.$win = nw.Window.get();
 app.config.globalProperties.$pid = process.pid;
 app.config.globalProperties.$screen = screen;
