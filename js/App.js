@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import MenuButtom from './components/MenuButtom.js';
+import NotificationArea from './components/NotificationArea.js';
 import WindowsSections from './components/WindowsSections.js';
 
 /* Init APP VueJS */
@@ -18,15 +19,11 @@ const app = createApp({
     <div class="container-fluid">
         <MenuButtom />
         <WindowsSections />
-
-        <div id="notificationArea">
-            <div id="network"></div>
-            <div id="battery"></div>
-            <div id="clock"></div>
-        </div>
+        <NotificarionArea />
     </div>`,
     components: {
         MenuButtom,
+        NotificationArea,
         WindowsSections
     }
 });
