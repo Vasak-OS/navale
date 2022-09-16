@@ -1,18 +1,18 @@
-import BatteryIndicator from "./notificationtools/BatteryIndicator.js";
-import Clock from "./notificationtools/Clock.js";
-import NetworkIndicator from "./notificationtools/NetworkIndicator.js";
+import BatteryIndicator from './notificationtools/BatteryIndicator.js';
+import Clock from './notificationtools/Clock.js';
+import NetworkIndicator from './notificationtools/NetworkIndicator.js';
 
 export default {
-    template: `
+	template: `
     <div id="notificationArea">
         <NetworkIndicator />
         <BatteryIndicator />
         <Clock />
     </div>
     `,
-    components: {
-        BatteryIndicator,
-        Clock,
-        NetworkIndicator
-    }
+	components: {
+		BatteryIndicator,
+		Clock,
+		NetworkIndicator
+	}
 };
