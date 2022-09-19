@@ -9,7 +9,7 @@ const app = createApp({
 	async beforeMount() {
 		// Set windows Properties
 		this.$win.setShowInTaskbar(false);
-		this.$win.resizeTo(Math.round(screen.width), 36);
+		this.$win.resizeTo(Math.round(this.$screen.width), 36);
 		this.$win.setResizable(false);
 		this.$win.y = 0;
 		this.$win.x = 0;
