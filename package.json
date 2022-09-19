@@ -1,18 +1,18 @@
 {
-  "name": "lynx-dock",
+  "name": "navale",
   "version": "0.0.1",
-  "description": "Dock for Lynx OS",
-  "domain": "lynxos",
+  "description": "Navale is the default panel of Vasak OS",
+  "domain": "vasak",
   "chromium-args": "--disable-accelerated-video --force-cpu-draw",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "window": {
-    "id": "ar.net.lynx.os.dock",
+    "id": "ar.net.vasak.os.navale",
     "show": true,
     "transparent": true,
-    "title": "Lynx Dock",
+    "title": "Navale",
     "icon": "icon.svg",
     "frame": false,
     "height": 32,
@@ -20,7 +20,7 @@
     "always_on_top": true
   },
   "category": "System & Tools",
-  "author": "Lynx Software Design",
+  "author": "Vasak group",
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "child_process": "^1.0.2",
