@@ -1,14 +1,14 @@
 export default {
 	methods: {
 		openMenu() {
-			this.$exec('lynx-menu');
+			this.$exec('hydriam');
 		},
 	},
 	computed: {
 		icon() {
 			return this.$execSynx('python', [
-				'/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py',
-				'lynx-menu',
+				'/usr/share/vasak-desktop-service/Vasak/getIcon.py',
+				'hydriam',
 			]).stdout.toString();
 		},
 	},
