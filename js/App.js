@@ -15,7 +15,7 @@ const app = createApp({
 		this.$win.x = 0;
 		this.$win.setAlwaysOnTop(true);
 		this.$exec('python', [
-			'/usr/share/Lynx/lynx-desktop-service/Setters/setDock.py',
+			'/usr/share/vasak-desktop-service/Setters/setDock.py',
 			`${this.$pid.toString()}`,
 			Math.round(this.$screen.width),
 		]);

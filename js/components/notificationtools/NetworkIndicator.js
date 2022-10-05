@@ -1,7 +1,7 @@
 export default {
 	data() {
 		return {
-			icon: this.$execSynx('python', ['/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py', 'network-disconnected-symbolic']).stdout.toString(),
+			icon: this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'network-disconnected-symbolic']).stdout.toString(),
 			data: '127.0.0.1'
 		};
 	},
@@ -15,13 +15,13 @@ export default {
 
 			if (device.type === 'wired') {
 				if (device.operstate === 'down') {
-					this.icon = this.$execSynx('python', ['/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py', 'network-wired-disconnected-symbolic']).stdout.toString();
+					this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'network-wired-disconnected-symbolic']).stdout.toString();
 				} else {
-					this.icon = this.$execSynx('python', ['/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py', 'network-wired-symbolic']).stdout.toString();
+					this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'network-wired-symbolic']).stdout.toString();
 				}
 			} else {
 				if (device.operstate === 'down') {
-					this.icon = this.$execSynx('python', ['/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py', 'network-wireless-disconnected-symbolic']).stdout.toString();
+					this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'network-wireless-disconnected-symbolic']).stdout.toString();
 				} else {
 					const wifi = await this.$systeminformation.wifiConnections();
 					const myWifi = wifi.find(conn => conn.iface === device.iface);
@@ -29,15 +29,15 @@ export default {
 
 					//elem.innerHTML = myWifi.signalLevel;
 					if (myWifi.signalLevel >= -30) {
-						this.icon = this.$execSynx('python', ['/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py', 'network-wireless-signal-excellent-symbolic']).stdout.toString();
+						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'network-wireless-signal-excellent-symbolic']).stdout.toString();
 					} else if (myWifi.signalLevel >= -67) {
-						this.icon = this.$execSynx('python', ['/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py', 'network-wireless-signal-good-symbolic']).stdout.toString();
+						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'network-wireless-signal-good-symbolic']).stdout.toString();
 					} else if (myWifi.signalLevel >= -70) {
-						this.icon = this.$execSynx('python', ['/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py', 'network-wireless-signal-ok-symbolic']).stdout.toString();
+						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'network-wireless-signal-ok-symbolic']).stdout.toString();
 					} else if (myWifi.signalLevel >= -80) {
-						this.icon = this.$execSynx('python', ['/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py', 'network-wireless-signal-weak-symbolic']).stdout.toString();
+						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'network-wireless-signal-weak-symbolic']).stdout.toString();
 					} else {
-						this.icon = this.$execSynx('python', ['/usr/share/Lynx/lynx-desktop-service/Lynx/getIcon.py', 'network-wireless-signal-none-symbolic']).stdout.toString();
+						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'network-wireless-signal-none-symbolic']).stdout.toString();
 					}
 				}
 			}

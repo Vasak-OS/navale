@@ -2,7 +2,7 @@
 import { reactive } from 'vue';
 const dbus = require('dbus-native');
 const sessionBus = dbus.sessionBus();
-const desktopServiceName = 'ar.net.lynx.os.desktop.service';
+const desktopServiceName = 'ar.net.vasak.os.desktop.service';
 const desktopInterfaceName = desktopServiceName;
 const desktopObjectPath = `/${desktopServiceName.replace(/\./g, '/')}`;
 const desktopServiceDBUS = sessionBus.getService(desktopServiceName);
