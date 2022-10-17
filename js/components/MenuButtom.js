@@ -6,10 +6,7 @@ export default {
 	},
 	computed: {
 		icon() {
-			return this.$execSynx('python', [
-				'/usr/share/vasak-desktop-service/Vasak/getIcon.py',
-				'hydriam',
-			]).stdout.toString();
+			return this.$getIcon('hydriam');
 		},
 	},
 	template: `

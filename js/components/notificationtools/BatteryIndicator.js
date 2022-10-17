@@ -1,7 +1,7 @@
 export default {
 	data() {
 		return {
-			icon: this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-missing-symbolic']).stdout.toString(),
+			icon: this.$getIcon('battery-missing-symbolic'),
 			percent: 0
 		};
 	},
@@ -15,49 +15,49 @@ export default {
 				this.percent = batteryInfo.percent;
 				if (batteryInfo.isCharging) {
 					if (batteryInfo.percent === 100) {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-full-charging-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-full-charging-symbolic');
 					} else if (batteryInfo.percent > 90) {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-level-90-charging-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-level-90-charging-symbolic');
 					} else if (batteryInfo.percent > 80) {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-level-80-charging-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-level-80-charging-symbolic');
 					} else if (batteryInfo.percent > 70) {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-level-70-charging-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-level-70-charging-symbolic');
 					} else if (batteryInfo.percent > 60) {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-level-60-charging-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-level-60-charging-symbolic');
 					} else if (batteryInfo.percent > 50) {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-level-50-charging-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-level-50-charging-symbolic');
 					} else if (batteryInfo.percent > 40) {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-level-40-charging-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-level-40-charging-symbolic');
 					} else if (batteryInfo.percent > 30) {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-level-30-charging-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-level-30-charging-symbolic');
 					} else if (batteryInfo.percent > 20) {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-level-20-charging-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-level-20-charging-symbolic');
 					} else {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-level-10-charging-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-level-10-charging-symbolic');
 					}
 				} else {
 					if (batteryInfo.percent === 100) {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-full-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-full-symbolic');
 					} else if (batteryInfo.percent > 90) {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-level-90-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-level-90-symbolic');
 					} else if (batteryInfo.percent > 80) {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-level-80-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-level-80-symbolic');
 					} else if (batteryInfo.percent > 70) {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-level-70-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-level-70-symbolic');
 					} else if (batteryInfo.percent > 60) {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-level-60-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-level-60-symbolic');
 					} else if (batteryInfo.percent > 50) {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-level-50-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-level-50-symbolic');
 					} else if (batteryInfo.percent > 40) {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-level-40-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-level-40-symbolic');
 					} else if (batteryInfo.percent > 30) {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-level-30-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-level-30-symbolic');
 					} else if (batteryInfo.percent > 20) {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-level-20-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-level-20-symbolic');
 					} else if (batteryInfo.percent > 10) {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-level-10-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-level-10-symbolic');
 					} else {
-						this.icon = this.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', 'battery-empty-symbolic']).stdout.toString();
+						this.icon = this.$getIcon('battery-empty-symbolic');
 					}
 				}
 			}
