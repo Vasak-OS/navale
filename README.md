@@ -1,5 +1,7 @@
 # Navale
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Vasak-OS_navale&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Vasak-OS_navale)
+
 Navale is a simple topbar/panel for your desktop. It is written in JavaScript and HTML. It is designed to be simple and easy to use. 
 
 ## Dependencies
@@ -47,6 +49,10 @@ npm install
 ```bash
 nw ./
 ```
+
+## Build Navale
+
+[PKGBUILD](https://github.com/Vasak-OS/PKGBUILDS/blob/main/navale/PKGBUILD)
 
 
 ## Contributing
