@@ -15,7 +15,7 @@ const app = createApp({
 		this.$win.x = 0;
 		this.$win.setAlwaysOnTop(true);
 		this.$exec('python', [
-			'/usr/share/vasak-desktop-service/Setters/setDock.py',
+			'/usr/share/vasak-desktop-service/setters/set_dock.py',
 			`${this.$pid.toString()}`,
 			Math.round(this.$screen.width),
 		]);
@@ -41,7 +41,7 @@ app.config.globalProperties.$win = nw.Window.get();
 app.config.globalProperties.$pid = process.pid;
 app.config.globalProperties.$screen = screen;
 app.config.globalProperties.$getIcon = (icon) => {
-	return app.config.globalProperties.$execSynx('python', ['/usr/share/vasak-desktop-service/Vasak/getIcon.py', icon]).stdout.toString();
+	return app.config.globalProperties.$execSynx('python', ['/usr/share/vasak-desktop-service/vasak/get_icon.py', icon]).stdout.toString();
 };
 
 app.mount('#app');
