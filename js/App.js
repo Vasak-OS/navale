@@ -41,7 +41,7 @@ app.config.globalProperties.$win = nw.Window.get();
 app.config.globalProperties.$pid = process.pid;
 app.config.globalProperties.$screen = screen;
 app.config.globalProperties.$getIcon = (icon) => {
-	return app.config.globalProperties.$execSynx('python', ['/usr/share/vasak-desktop-service/vasak/get_icon.py', icon]).stdout.toString();
+	return app.config.globalProperties.$execSynx('python', ['/usr/share/vasak-desktop-service/get_icon.py', icon]).stdout.toString();
 };
 
 app.mount('#app');
