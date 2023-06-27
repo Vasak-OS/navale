@@ -13,6 +13,6 @@ export default {
 	components: {
 		BatteryIndicator,
 		Clock,
-		NetworkIndicator
-	}
+		NetworkIndicator,
+	},
 };

@@ -2,7 +2,7 @@ export default {
 	data() {
 		return {
 			icon: this.$getIcon('battery-missing-symbolic'),
-			percent: 0
+			percent: 0,
 		};
 	},
 	mounted() {
@@ -12,7 +12,7 @@ export default {
 		setIcon(icon, isCharging) {
 			if (isCharging) {
 				this.icon = this.$getIcon(`${icon}-charging-symbolic`);
-			}else{
+			} else {
 				this.icon = this.$getIcon(`${icon}-symbolic`);
 			}
 		},
@@ -20,7 +20,7 @@ export default {
 			const batteryInfo = await this.$systeminformation.battery();
 			if (batteryInfo.hasBattery) {
 				this.percent = batteryInfo.percent;
-				
+
 				if (batteryInfo.percent === 100) {
 					this.setIcon('battery-full', batteryInfo.isCharging);
 				} else if (batteryInfo.percent > 90) {
@@ -45,8 +45,7 @@ export default {
 					this.setIcon('battery-empty', batteryInfo.isCharging);
 				}
 			}
-
-		}
+		},
 	},
 	template: `
         <div id="battery">
@@ -58,5 +57,5 @@ export default {
                 class="img-fluid dock-system-icon"
                 alt="Menu" />
         </div>
-    `
+    `,
 };
