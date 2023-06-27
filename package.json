@@ -1,35 +1,35 @@
 {
-  "name": "navale",
-  "version": "0.1.3",
-  "description": "Navale is the default panel of Vasak OS",
-  "domain": "vasak",
-  "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "window": {
-    "id": "ar.net.vasak.os.navale",
-    "show": true,
-    "transparent": true,
-    "title": "Navale",
-    "icon": "icon.svg",
-    "frame": false,
-    "height": 32,
-    "show_in_taskbar": false,
-    "always_on_top": true
-  },
-  "category": "System & Tools",
-  "author": "Vasak group",
-  "license": "GPL-3.0-or-later",
-  "dependencies": {
-    "@microsoft/eslint-formatter-sarif": "^3.0.0",
-    "child_process": "^1.0.2",
-    "dbus-native": "^0.4.0",
-    "systeminformation": "^5.11.15"
-  },
-  "devDependencies": {
-    "eslint": "^8.25.0",
-    "eslint-plugin-css": "^0.6.0",
-    "eslint-plugin-vue": "^9.5.0"
-  }
+	"name": "navale",
+	"version": "0.1.4",
+	"description": "Navale is the default panel of Vasak OS",
+	"domain": "vasak",
+	"main": "index.html",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"window": {
+		"id": "ar.net.vasak.os.navale",
+		"show": true,
+		"transparent": true,
+		"title": "Navale",
+		"icon": "icon.svg",
+		"frame": false,
+		"height": 32,
+		"show_in_taskbar": false,
+		"always_on_top": true
+	},
+	"category": "System & Tools",
+	"author": "Vasak group",
+	"license": "GPL-3.0-or-later",
+	"dependencies": {
+		"@microsoft/eslint-formatter-sarif": "^3.0.0",
+		"child_process": "^1.0.2",
+		"dbus-native": "^0.4.0",
+		"systeminformation": "^5.11.15"
+	},
+	"devDependencies": {
+		"eslint": "^8.25.0",
+		"eslint-plugin-css": "^0.6.0",
+		"eslint-plugin-vue": "^9.5.0"
+	}
 }
