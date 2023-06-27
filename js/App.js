@@ -2,7 +2,7 @@
 import { createApp } from 'vue';
 import MenuButtom from './components/MenuButtom.js';
 import NotificationArea from './components/NotificationArea.js';
-import WindowsSections from './components/WindowsSections.js';
+//import WindowsSections from './components/WindowsSections.js';
 
 /* Init APP VueJS */
 const app = createApp({
@@ -14,16 +14,15 @@ const app = createApp({
 		this.$win.y = 0;
 		this.$win.x = 0;
 		this.$win.setAlwaysOnTop(true);
-		this.$exec('python', [
+		/*this.$exec('python', [
 			'/usr/share/vasak-desktop-service/setters/set_dock.py',
 			`${this.$pid.toString()}`,
 			Math.round(this.$screen.width),
-		]);
+		]);*/
 	},
 	template: `
     <div class="container-fluid">
         <MenuButtom />
-        <WindowsSections />
         <NotificationArea />
     </div>`,
 	components: {
@@ -41,7 +40,12 @@ app.config.globalProperties.$win = nw.Window.get();
 app.config.globalProperties.$pid = process.pid;
 app.config.globalProperties.$screen = screen;
 app.config.globalProperties.$getIcon = (icon) => {
-	return app.config.globalProperties.$execSynx('python', ['/usr/share/vasak-desktop-service/get_icon.py', icon]).stdout.toString();
+	return app.config.globalProperties
+		.$execSynx('python', [
+			'/usr/share/vasak-desktop-service/get_icon.py',
+			icon,
+		])
+		.stdout.toString();
 };
 
 app.mount('#app');
