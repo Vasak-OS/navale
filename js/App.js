@@ -28,7 +28,7 @@ const app = createApp({
 	components: {
 		MenuButtom,
 		NotificationArea,
-		WindowsSections,
+		//WindowsSections,
 	},
 });
 
