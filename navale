@@ -1,2 +1,12 @@
 #!/bin/bash
-nw /usr/share/navale/ --enable-transparent-visuals --disable-gpu &
+path="/usr/share/navale/"
+echo "Starting Navale..."
+echo "Path: $path"
+echo "Dev: $1"
+echo "----------------------"
+
+if [ $1 == "--dev" ]; then
+    nw-sdk $path --enable-transparent-visuals --disable-gpu
+else
+    nw $path --enable-transparent-visuals --disable-gpu
+fi
