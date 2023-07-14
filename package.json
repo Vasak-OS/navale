@@ -4,6 +4,7 @@
 	"description": "Navale is the default panel of Vasak OS",
 	"domain": "vasak",
 	"main": "index.html",
+	"chromium-flags": "--enable-features=UseOzonePlatform --ozone-platform=wayland",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
