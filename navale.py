@@ -25,7 +25,7 @@ class VSKDockWindow(QMainWindow):
     # Establecer atributos de la ventana
     def set_attributes(self):
         self.setWindowTitle("navale")
-        self.setGeometry(0, 0, QApplication.desktop().screenGeometry().width(), 32) # Establecer tamaño
+        self.setGeometry(0, 0, QApplication.desktop().screenGeometry().width(), 40) # Establecer tamaño
         self.setAttribute(Qt.WA_TranslucentBackground, True) # Fondo transparente
         self.setAttribute(Qt.WA_NoSystemBackground, True) # No dibujar el fondo del sistema
         self.setAttribute(Qt.WA_X11NetWmWindowTypeDock, True) # Seteo tipo dock x11
@@ -53,6 +53,7 @@ class VSKDockWindow(QMainWindow):
     # Establecer el widget central. Y el WebView.
     def set_widget(self):
         layout = QVBoxLayout()
+        layout.setContentsMargins(0, 0, 0, 0)
         self.central_widget = QWidget()
         self.central_widget.setLayout(layout)
         self.setCentralWidget(self.central_widget)
