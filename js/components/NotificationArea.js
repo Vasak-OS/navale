@@ -1,18 +1,14 @@
-import BatteryIndicator from './notificationtools/BatteryIndicator.js';
-import Clock from './notificationtools/Clock.js';
-import NetworkIndicator from './notificationtools/NetworkIndicator.js';
-
-export default {
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+const NotificationArea = {
 	template: `
     <div id="notificationArea">
-        <NetworkIndicator />
-        <BatteryIndicator />
         <Clock />
     </div>
     `,
 	components: {
-		BatteryIndicator,
+		//BatteryIndicator,
 		Clock,
-		NetworkIndicator,
+		//NetworkIndicator,
 	},
 };

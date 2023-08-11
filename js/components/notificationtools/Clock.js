@@ -1,4 +1,5 @@
-export default {
+/* eslint-disable no-unused-vars */
+const Clock = {
 	data() {
 		return {
 			day: 0,

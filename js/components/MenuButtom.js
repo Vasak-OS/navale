@@ -1,4 +1,5 @@
-export default {
+/* eslint-disable no-unused-vars */
+const MenuButtom = {
 	methods: {
 		openMenu() {
 			this.$exec('hydriam');
@@ -6,7 +7,7 @@ export default {
 	},
 	computed: {
 		icon() {
-			return this.$getIcon('hydriam');
+			return 'hydriam';
 		},
 	},
 	template: `

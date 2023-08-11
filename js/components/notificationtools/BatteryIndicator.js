@@ -1,4 +1,5 @@
-export default {
+/* eslint-disable no-unused-vars */
+const BatteryIndicator = {
 	data() {
 		return {
 			icon: this.$getIcon('battery-missing-symbolic'),

@@ -1,25 +1,7 @@
 /* eslint-disable no-undef */
-createApp = require('vue').createApp;
-MenuButtom = require('./components/MenuButtom.js');
-NotificationArea = require('./components/NotificationArea.js');
-//import WindowsSections from './components/WindowsSections.js';
 
 /* Init APP VueJS */
-const app = createApp({
-	async beforeMount() {
-		// Set windows Properties
-		this.$win.setShowInTaskbar(false);
-		this.$win.resizeTo(Math.round(this.$screen.width), 36);
-		this.$win.setResizable(false);
-		this.$win.y = 0;
-		this.$win.x = 0;
-		this.$win.setAlwaysOnTop(true);
-		/*this.$exec('python', [
-			'/usr/share/vasak-desktop-service/setters/set_dock.py',
-			`${this.$pid.toString()}`,
-			Math.round(this.$screen.width),
-		]);*/
-	},
+const app = Vue.createApp({
 	template: `
     <div class="container-fluid">
         <MenuButtom />
@@ -31,21 +13,5 @@ const app = createApp({
 		//WindowsSections,
 	},
 });
-
-/* Add Services aditional to VueJS in Global Properties */
-app.config.globalProperties.$execSynx = require('child_process').spawnSync;
-app.config.globalProperties.$exec = require('child_process').spawn;
-app.config.globalProperties.$systeminformation = require('systeminformation');
-app.config.globalProperties.$win = nw.Window.get();
-app.config.globalProperties.$pid = process.pid;
-app.config.globalProperties.$screen = screen;
-app.config.globalProperties.$getIcon = (icon) => {
-	return app.config.globalProperties
-		.$execSynx('python', [
-			'/usr/share/vasak-desktop-service/get_icon.py',
-			icon,
-		])
-		.stdout.toString();
-};
 
 app.mount('#app');
