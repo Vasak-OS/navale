@@ -42,6 +42,8 @@ class VSKDockWindow(QMainWindow):
         file_path = os.path.abspath(html)
         self.webview.webContent = file_path
         self.webview.load(QUrl.fromLocalFile(file_path))
+        page = self.webview.page()
+        page.setBackgroundColor(Qt.transparent)
         
     def set_webview_poprties(self):
         self.webview.setContextMenuPolicy(Qt.NoContextMenu)
@@ -52,14 +54,9 @@ class VSKDockWindow(QMainWindow):
         
     # Establecer el widget central. Y el WebView.
     def set_widget(self):
-        layout = QVBoxLayout()
-        layout.setContentsMargins(0, 0, 0, 0)
-        self.central_widget = QWidget()
-        self.central_widget.setLayout(layout)
-        self.setCentralWidget(self.central_widget)
-
         self.webview = QWebEngineView(self)
-        layout.addWidget(self.webview)
+        self.setCentralWidget(self.webview)
+        
         
 if __name__ == "__main__":
     window = VSKDockWindow()
