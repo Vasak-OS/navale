@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-import { createApp } from 'vue';
-import MenuButtom from './components/MenuButtom.js';
-import NotificationArea from './components/NotificationArea.js';
+createApp = require('vue').createApp;
+MenuButtom = require('./components/MenuButtom.js');
+NotificationArea = require('./components/NotificationArea.js');
 //import WindowsSections from './components/WindowsSections.js';
 
 /* Init APP VueJS */
