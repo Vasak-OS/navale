@@ -1,16 +1,20 @@
 import sys
 import signal
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication
-from Vasak.VSKDockWindow import VSKDockWindow
+from gi.repository import GLib
+from dbus.mainloop.glib import DBusGMainLoop
+from PyQt6.QtWidgets import QApplication
+from Navale.NavaleWindow import NavaleWindow
    
 
 app = QApplication(sys.argv)
-app.setAttribute(Qt.AA_UseHighDpiPixmaps) # Usar pixeles de alta resolución
-app.setAttribute(Qt.AA_EnableHighDpiScaling) # Habilitar escalamiento de alta resolución
 
 if __name__ == "__main__":
-    window = VSKDockWindow()
+    DBusGMainLoop(set_as_default=True)
+    loop = GLib.MainLoop()
+    
+    window = NavaleWindow()
     window.show()
     signal.signal(signal.SIGINT, signal.SIG_DFL)  # Habilitar Ctrl+C
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
+    
+    loop.run()
