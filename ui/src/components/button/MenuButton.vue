@@ -33,7 +33,7 @@ export default defineComponent({
       :src="'file://' + icon"
       data-bs-toggle="tooltip"
       data-bs-placement="left"
-      title="Lynx Menu"
+      title="Hydriam"
       class="img-fluid dock-menu-launcher-icon"
       alt="Menu"
     />
