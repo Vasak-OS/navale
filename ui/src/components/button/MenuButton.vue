@@ -13,7 +13,7 @@ export default defineComponent({
       console.log('hydriam')
     },
     async setIcon(): Promise<void> {
-      this.menuIcon = await this.$vsk.getGlobalIcon('hydriam')
+      this.menuIcon = await (this as any).$vsk.getGlobalIcon('hydriam')
     }
   },
   computed: {

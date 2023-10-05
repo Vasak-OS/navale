@@ -10,4 +10,5 @@ const startApp = (channel: any) => {
   app.mount('#app')
 }
 
+// @ts-ignore
 new QWebChannel(qt.webChannelTransport, startApp)
