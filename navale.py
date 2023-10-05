@@ -3,7 +3,7 @@ import signal
 from gi.repository import GLib
 from dbus.mainloop.glib import DBusGMainLoop
 from PyQt6.QtWidgets import QApplication
-from Navale.NavaleWindow import NavaleWindow
+from src.NavaleWindow import NavaleWindow
    
 
 app = QApplication(sys.argv)

@@ -1,10 +1,9 @@
 import json
 from Vasak.VSKWindow import VSKWindow
-from Vasak.VSKIconManager import VSKIconManager
-from Vasak.VSKNetworkManager import VSKNetworkManager
+from Vasak.system.VSKIconManager import VSKIconManager
+from Vasak.system.VSKNetworkManager import VSKNetworkManager
 from PyQt6.QtCore import pyqtSlot
 from PyQt6.QtWidgets import QApplication
-from PyQt6.QtWebEngineWidgets import QWebEngineView
 
 
 class NavaleWindow(VSKWindow):
