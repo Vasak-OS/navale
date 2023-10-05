@@ -1,10 +1,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
+import NetworkStatus from '@/components/status/NetworkStatus.vue'
 import ClockComponent from '@/components/ClockComponent.vue'
 
 export default defineComponent({
   name: 'NotificationArea',
   components: {
+    NetworkStatus,
     ClockComponent
   }
 })
@@ -12,6 +14,7 @@ export default defineComponent({
 
 <template>
   <div id="notificationArea">
+    <NetworkStatus />
     <ClockComponent />
   </div>
 </template>

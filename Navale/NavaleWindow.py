@@ -1,9 +1,9 @@
-import os
+import json
 from Vasak.VSKWindow import VSKWindow
 from Vasak.VSKIconManager import VSKIconManager
-from PyQt6.QtCore import QUrl, Qt, pyqtSlot
-from PyQt6.QtGui import QSessionManager
-from PyQt6.QtWidgets import QApplication, QMainWindow
+from Vasak.VSKNetworkManager import VSKNetworkManager
+from PyQt6.QtCore import pyqtSlot
+from PyQt6.QtWidgets import QApplication
 from PyQt6.QtWebEngineWidgets import QWebEngineView
 
 
@@ -11,6 +11,7 @@ class NavaleWindow(VSKWindow):
     def __init__(self):
         super().__init__()
         self.iconsManager = VSKIconManager()
+        self.networkManager = VSKNetworkManager()
         self.channel.registerObject("vsk", self)
         self.move_to_screen() # Mover la ventana a una pantalla específica
         self.set_as_dock() # Hacer que la ventana se comporte como un dock
@@ -26,3 +27,8 @@ class NavaleWindow(VSKWindow):
     @pyqtSlot(str, result=str)
     def getGlobalIcon(self, iconName):
         return self.iconsManager.get_icon(iconName)
+    
+    @pyqtSlot(result=str)
+    def getDefaultNetwork(self):
+        self.networkManager.updateStatus()
+        return json.dumps(self.networkManager.getDefaultConnectionData(), indent=4)
