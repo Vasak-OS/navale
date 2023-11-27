@@ -1,12 +1,12 @@
 #!/bin/bash
-path="/usr/share/navale/"
+path="/usr/share/navale/navale.py"
 echo "Starting Navale..."
 echo "Path: $path"
 echo "Dev: $1"
 echo "----------------------"
 
 if [ $1 == "--dev" ]; then
-    nw-sdk $path --enable-transparent-visuals --disable-gpu
+    python $path --webEngineArgs --remote-debugging-port=3030
 else
-    nw $path --enable-transparent-visuals --disable-gpu
+    python $path
 fi
