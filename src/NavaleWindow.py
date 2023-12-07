@@ -16,4 +16,4 @@ class NavaleWindow(VSKWindow):
     def move_to_screen(self):
         self.setGeometry(0, 0, QApplication.primaryScreen().availableGeometry().width(), 40)
         self.setScreen(QApplication.primaryScreen())
-        self.move(QApplication.primaryScreen().availableGeometry().topLeft())
+        self.move(QApplication.primaryScreen().availableGeometry().bottomLeft() - self.rect().bottomLeft())
