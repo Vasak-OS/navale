@@ -28,7 +28,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <a class="navbar-brand" href="#" id="dockMenuLauncher" @click="openMenu()">
+  <a class="navbar-brand ms-auto me-auto" href="#" id="dockMenuLauncher" @click="openMenu()">
     <img
       :src="'file://' + icon"
       data-bs-toggle="tooltip"
