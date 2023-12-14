@@ -28,3 +28,7 @@ class NavaleBinding(QObject):
         home_path = os.path.join("/", home_path)
 
       return home_path
+  
+  @pyqtSlot(str)
+  def toggleWindow(self, id):
+    self.window.toggleWindow(id)
