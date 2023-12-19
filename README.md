@@ -8,19 +8,15 @@ Navale is a simple topbar/panel for your desktop. It is written in JavaScript an
 
 Navale depends on the following packages:
 
-* [Bootstrap](https://getbootstrap.com/)
-* [NW.js](https://nwjs.io/)
-* [Vue](https://vuejs.org/) (libvasak-vue)
-* libvasak-ui
-* hydriam
-* python-dbus
-* python-gobject
+* [Bootstrap](https://getbootstrap.com/) ([libvasak-bootstrap](https://github.com/Vasak-OS/PKGBUILDS/blob/main/libvasak-bootstrap/PKGBUILD))
+* [libvasak-ui](https://github.com/Vasak-OS/PKGBUILDS/blob/main/libvasak-ui/PKGBUILD)
+* [hydriam](https://github.com/Vasak-OS/PKGBUILDS/blob/main/hydriam/PKGBUILD)
+* [python-libvasak](https://github.com/Vasak-OS/PKGBUILDS/blob/main/python-libvasak/PKGBUILD)
 * python-xlib
 
 ### Build Dependencies
 
-* [Node.js](https://nodejs.org/)
-* [NPM](https://www.npmjs.com/)
+* [NPM](https://www.npmjs.com/) | [YARN](https://yarnpkg.com/) 
 
 ## Start Navale
 
@@ -32,27 +28,29 @@ To start Navale, run the following steps:
 git clone git@github.com:Vasak-OS/navale.git
 ```
 
-2. Move to the directory
+2. Move to the directory ui
 
 ```bash
-cd navale
+cd navale/ui
 ```
 
-3. Install dependencies
+3. Install dependencies and build UI
 
 ```bash
-npm install
+yarn install
+yarn build
 ```
 
 4. Start Navale
 
 ```bash
-nw ./
+cd ../
+python navale.py
 ```
 
 ## Build Navale
 
-[PKGBUILD](https://github.com/Vasak-OS/PKGBUILDS/blob/main/navale/PKGBUILD)
+Use [PKGBUILD](https://github.com/Vasak-OS/PKGBUILDS/blob/main/navale/PKGBUILD) to build Navale for Arch. If you want to build Navale for another distribution, you can use the steps in the PKGBUILD.
 
 
 ## Contributing
@@ -84,5 +82,15 @@ git push origin feature/battery-indicator
 
 - [Bootstrap](https://getbootstrap.com/)
 - [Vue](https://vuejs.org/)
-- [NW.js](https://nwjs.io/)
+- [PyQT](https://pypi.org/project/PyQt6/)
 
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
