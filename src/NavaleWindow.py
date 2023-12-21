@@ -1,5 +1,6 @@
 from Vasak.VSKWindow import VSKWindow
 from PyQt6.QtWidgets import QApplication
+from PyQt6.QtCore import Qt
 from src.x11.X11WindowStatusManager import X11WindowStatusManager
 from src.NavaleBinding import NavaleBinding
 
@@ -24,3 +25,11 @@ class NavaleWindow(VSKWindow):
 
     def toggleWindow(self, id):
         self.windowStatusManager.toggleWindow(id)
+    
+    def set_as_dock(self):
+        self.setAttribute(Qt.WidgetAttribute.WA_X11NetWmWindowTypeDock, True)  # Seteo tipo dock x11
+        self.setAttribute(Qt.WidgetAttribute.WA_AlwaysShowToolTips, True)
+        self.setAttribute(Qt.WidgetAttribute.WA_AlwaysStackOnTop, True)  # Mantener la ventana por encima de las demás
+        self.setWindowFlags(
+            self.windowFlags() | Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint
+        )  # Establecer atributos de la ventana (sin bordes, sin barra de título, etc.)
