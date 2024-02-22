@@ -6,7 +6,7 @@ echo "Dev: $1"
 echo "----------------------"
 
 if [ $1 == "--dev" ]; then
-    python $path --webEngineArgs --remote-debugging-port=3030
+    python $path --webEngineArgs --remote-debugging-port=3030 --remote-allow-origins=http://127.0.0.1:3030 --process-per-site
 else
-    python $path
+    python $path --webEngineArgs --process-per-site
 fi
