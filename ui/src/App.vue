@@ -5,9 +5,7 @@ import MenuButton from './components/button/MenuButton.vue'
 </script>
 
 <template>
-  <div class="container-fluid">
-    <WindowsArea />
-    <MenuButton />
-    <NotificationArea />
-  </div>
+  <WindowsArea />
+  <MenuButton />
+  <NotificationArea />
 </template>

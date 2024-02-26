@@ -13,7 +13,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div id="notificationArea">
+  <div class="navale-notification-area">
     <NetworkStatus />
     <ClockComponent />
   </div>
