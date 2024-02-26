@@ -1,40 +1,26 @@
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { ref, onMounted, inject, computed } from 'vue'
 
-export default defineComponent({
-  name: 'MenuButton',
-  data() {
-    return {
-      menuIcon: ''
-    }
-  },
-  methods: {
-    openMenu(): void {
-      console.log('hydriam')
-    },
-    async setIcon(): Promise<void> {
-      this.menuIcon = await (this as any).$vsk.getGlobalIcon('applications-all')
-    }
-  },
-  computed: {
-    icon(): string {
-      return this.menuIcon
-    }
-  },
-  mounted() {
-    this.setIcon()
-  }
+const $vsk: any = inject('vsk')
+const menuIcon = ref('')
+const openMenu = (): void => {
+  console.log('hydriam')
+}
+const setIcon = async (): Promise<void> => {
+  menuIcon.value = await $vsk.getGlobalIcon('applications-all')
+}
+const icon = computed(() => menuIcon.value)
+
+onMounted(() => {
+  setIcon()
 })
 </script>
 
 <template>
-  <a class="navbar-brand ms-auto me-auto" href="#" id="dockMenuLauncher" @click="openMenu()">
+  <a class="navale-menu" href="#" id="dockMenuLauncher" @click="openMenu()">
     <img
       :src="'file://' + icon"
-      data-bs-toggle="tooltip"
-      data-bs-placement="left"
       title="Hydriam"
-      class="img-fluid dock-menu-launcher-icon"
       alt="Menu"
     />
   </a>

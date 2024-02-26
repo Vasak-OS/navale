@@ -1,28 +1,16 @@
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { inject } from 'vue';
 
-export default defineComponent({
-  name: 'WindowBottom',
-  props: {
-    window: { type: Object, required: true }
-  },
-  methods: {
-    async toggleWindow(): Promise<void> {
-      await (this as any).$vsk.toggleWindow(this.window.id)
-    },
-  },
-})
+const $vsk:any = inject('vsk')
+defineProps<{ window: any }>()
+
+const toggleWindow = async (): Promise<void> => {
+  await $vsk.toggleWindow((window as any).id)
+}
 </script>
 
 <template>
-  <a class="navbar-brand" href="#" @click="toggleWindow">
-    <img
-      :src="window.icon"
-      data-bs-toggle="tooltip"
-      data-bs-placement="left"
-      :title="window.name"
-      class="img-fluid win-img"
-      :alt="window.name"
-    />
+  <a href="#" @click="toggleWindow">
+    <img :src="window.icon" :title="window.name" :alt="window.name" />
   </a>
 </template>
