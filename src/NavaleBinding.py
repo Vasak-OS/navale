@@ -20,6 +20,10 @@ class NavaleBinding(QObject):
       self.networkManager.updateStatus()
       return json.dumps(self.networkManager.getDefaultConnectionData(), indent=4)
   
+  @pyqtSlot()
+  def loadUIConfig(self):
+    self.window.load_ui_config()
+  
   @pyqtSlot(result=str)
   def getHome(self):
       home_path = os.path.expanduser("~")

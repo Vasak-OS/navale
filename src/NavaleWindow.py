@@ -1,4 +1,5 @@
 from Vasak.VSKWindow import VSKWindow
+from Vasak.system.VSKConfigManager import VSKConfigManager
 from PyQt6.QtWidgets import QApplication
 from PyQt6.QtCore import Qt
 from src.x11.X11WindowStatusManager import X11WindowStatusManager
@@ -9,6 +10,7 @@ class NavaleWindow(VSKWindow):
         super().__init__()
         self.shareObject = NavaleBinding(self)
         self.windowStatusManager = X11WindowStatusManager(self)
+        self.configManager = VSKConfigManager()
         self.channel.registerObject("vsk", self.shareObject)
         self.move_to_screen() # Mover la ventana a una pantalla específica
         self.set_as_dock() # Hacer que la ventana se comporte como un dock
@@ -22,6 +24,19 @@ class NavaleWindow(VSKWindow):
     
     def send_Javascript(self, message):
         self.webview.page().runJavaScript(message)
+    
+    def load_ui_config(self):
+        self.configManager.reload()
+        darkMode = self.configManager.get('STYLE', 'darkmode')
+        radius = self.configManager.get('STYLE', 'radius')
+        color = self.configManager.get('STYLE', 'color')
+
+        self.send_Javascript(f'document.body.style.setProperty("--system-rounded", "{radius}px")')
+        self.send_Javascript(f'document.body.style.setProperty("--system-accent-color", "{color}")')
+        if darkMode == 'true':
+            self.send_Javascript('document.body.classList.add("dark")')
+        else:
+            self.send_Javascript('document.body.classList.remove("dark")')
 
     def toggleWindow(self, id):
         self.windowStatusManager.toggleWindow(id)
