@@ -16,18 +16,17 @@ class X11WindowStatusManager:
     # Connect the screen to the default event loop
     self.screen.connect("window-opened", self.windowOpened)
     self.screen.connect('window-closed', self.windowClosed)
-    self.emitSignal()
 
   def windowOpened(self, screen, window):
     windowType = window.get_window_type()
     if windowType == Wnck.WindowType.NORMAL:
       self.all_windows.append(window)
-    self.emitSignal()
-    
+      self.emitSignal()
   
   def windowClosed(self, screen, window):
-    self.all_windows.remove(window)
-    self.emitSignal()
+    if window in self.all_windows:
+      self.all_windows.remove(window)
+      self.emitSignal()
   
   def emitSignal(self):
     windows = []
