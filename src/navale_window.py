@@ -1,9 +1,9 @@
-from Vasak.VSKWindow import VSKWindow
-from Vasak.system.VSKConfigManager import VSKConfigManager
+from Vasak.vsk_window import VSKWindow
+from Vasak.system.vsk_config_manager import VSKConfigManager
 from PyQt6.QtWidgets import QApplication
 from PyQt6.QtCore import Qt
-from src.x11.X11WindowStatusManager import X11WindowStatusManager
-from src.NavaleBinding import NavaleBinding
+from src.x11.x11_window_status_manager import X11WindowStatusManager
+from src.navale_binding import NavaleBinding
 
 class NavaleWindow(VSKWindow):
     def __init__(self):

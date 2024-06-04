@@ -1,7 +1,7 @@
 import json
 import os
-from Vasak.system.VSKIconManager import VSKIconManager
-from Vasak.system.VSKNetworkManager import VSKNetworkManager
+from Vasak.system.vsk_icon_manager import VSKIconManager
+from Vasak.system.vsk_network_manager import VSKNetworkManager
 from PyQt6.QtCore import pyqtSlot, QObject
 
 class NavaleBinding(QObject):

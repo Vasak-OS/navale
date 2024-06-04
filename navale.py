@@ -2,7 +2,7 @@ import sys
 import signal
 import os
 from PyQt6.QtWidgets import QApplication
-from src.NavaleWindow import NavaleWindow
+from src.navale_window import NavaleWindow
 from PyQt6.QtCore import QFileSystemWatcher
 
 app = QApplication(sys.argv)
