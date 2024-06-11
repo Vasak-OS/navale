@@ -14,7 +14,7 @@ class NavaleWindow(VSKWindow):
         self.channel.registerObject("vsk", self.shareObject)
         self.move_to_screen() # Mover la ventana a una pantalla específica
         self.set_as_dock() # Hacer que la ventana se comporte como un dock
-        self.load_html("ui/dist/index.html") # Cargar un HTML en el WebView
+        self.load_html("/usr/share/navale/ui/dist/index.html") # Cargar un HTML en el WebView
     
     # Mover la ventana a una pantalla específica
     def move_to_screen(self):
