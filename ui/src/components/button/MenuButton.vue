@@ -4,7 +4,7 @@ import { ref, onMounted, inject, computed } from 'vue'
 const $vsk: any = inject('vsk')
 const menuIcon = ref('')
 const openMenu = (): void => {
-  console.log('hydriam')
+  $vsk.exec('hydriam')
 }
 const setIcon = async (): Promise<void> => {
   menuIcon.value = await $vsk.getGlobalIcon('applications-all')

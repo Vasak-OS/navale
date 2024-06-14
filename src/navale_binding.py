@@ -2,6 +2,7 @@ import json
 import os
 from Vasak.system.vsk_icon_manager import VSKIconManager
 from Vasak.system.vsk_network_manager import VSKNetworkManager
+from Vasak.application.vsk_shell_connector import VSKShellConnector
 from PyQt6.QtCore import pyqtSlot, QObject
 
 class NavaleBinding(QObject):
@@ -10,6 +11,7 @@ class NavaleBinding(QObject):
     self.window = window
     self.iconsManager = VSKIconManager()
     self.networkManager = VSKNetworkManager()
+    self.shellConnector = VSKShellConnector()
   
   @pyqtSlot(str, result=str)
   def getGlobalIcon(self, iconName):
@@ -36,3 +38,7 @@ class NavaleBinding(QObject):
   @pyqtSlot(str)
   def toggleWindow(self, id):
     self.window.toggleWindow(id)
+  
+  @pyqtSlot(str)
+  def exec(self, command):
+    self.shellConnector.run(command)
