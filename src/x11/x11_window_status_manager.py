@@ -4,7 +4,7 @@ import time
 
 gi.require_version('Wnck', '3.0')
 from gi.repository import Wnck
-from Vasak.system.VSKIconManager import VSKIconManager
+from Vasak.system.vsk_icon_manager import VSKIconManager
 
 class X11WindowStatusManager:
   def __init__(self, window):
